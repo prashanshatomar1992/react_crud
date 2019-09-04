@@ -1,0 +1,28 @@
+TOPICS TO BE COVERED
+----------------------------------------
+Composing Componenets
+Pass Data
+passing Data user props
+passing children using props caled children
+Debugging in reactjs - using React Developer Tools extension in chrome to debug the react app
+Updating the state
+Raise and Handle Events 
+Object destructuring
+Contorlled component = Comtrolled component does not have the state, controlled component receives the data from the prop and raises events whenever data needs to be changed
+Removing the Local State 
+Refactoring
+
+Single source of truth
+
+Multiple Component in Sync
+Functional Components
+Lifecycle Hooks
+
+
+CRUD operatioon with api
+LINK ---- https://appdividend.com/2018/11/11/react-crud-example-mern-stack-tutorial/
+Props vs state
+-----------------------------------------
+State is local to the component we cannot access state of one component into another component.
+We cannot change the property of the componet, example this.props.value=1; =>this will give error.
+React not allor to change the property of the component, property are the pure inputs to the component.
