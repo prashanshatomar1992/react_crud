@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import toastr from 'reactjs-toastr';
+import 'reactjs-toastr/lib/toast.css';
+
+
 export default class Signup extends Component { 
     constructor(props){
         super(props);
@@ -45,7 +49,10 @@ export default class Signup extends Component {
           password:this.state.password
         }
         axios.post('http://localhost:4000/user/add', obj)
-        .then(res=>console.log(res)).catch(err=>{
+        .then(res=>{
+          console.log('cgfg' ,res);
+          // toastr.success('Signup successfully','Title',{displayDuration:3000})
+        }).catch(err=>{
           console.log(err)
         });
         this.setState({
@@ -64,6 +71,7 @@ export default class Signup extends Component {
     return (
       <div style={{ marginTop: 10 }}>
         <p>Welcome to Signup Component!!</p>
+        <p onClick={()=>toastr.success('Success Message', 'Title', {displayDuration:3000})}>Show Success Message</p>
         <h3>Signup Here</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">

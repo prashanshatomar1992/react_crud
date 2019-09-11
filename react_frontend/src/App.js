@@ -10,6 +10,11 @@ import Index from "./components/index.component";
 import Login from "./components/login.component";
 import Signup from "./components/signup.component";
 
+/**
+ * toastr added
+ */
+// import toastr from 'reactjs-toastr';
+// import 'reactjs-toastr/lib/toast.css';
 
 class App extends Component {
   render() {

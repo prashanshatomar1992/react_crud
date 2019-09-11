@@ -14,39 +14,33 @@ router.route("/add").post(function(req, res) {
     .save()
     .then(user => {
       console.log(user);
-      //   res.status(200).json({ user: "User added  successfully" });
+        res.status(200).json({ user: "User added  successfully" });
     })
     .catch(err => {
       console.log("err   ");
       console.log(err);
 
-      //   res.status(401).send("unable to save database ", err);
+        res.status(401).send("unable to save database ", err);
     });
 });
 
 router.route("/login").post(function(req, res) {
   console.log("Inside login api  ", req.body.email, req.body.password);
-  User.findOne({ email: req.body.email }, {}, (err, data) => {
-    console.log(err);
-    console.log(data);
-  });
+  // User.findOne({ email: req.body.email }, {}, (err, data) => {
+  //   console.log(err);
+  //   console.log(data);
+  // });
   let dd = User.findOne({ email: req.body.email }, {}).exec();
 
   console.log("data  ");
   dd.then(data => {
     console.log("534534543", data);
     data.checkPassword(req.body.password, function(err, isMatch) {
-      if (err) return console.log('wrong password',err)
-      console.log("matched   ",isMatch)
+      if (err) return console.log("wrong password", err);
+      console.log("matched   ", isMatch);
+      res.status(200).json({ user: "Password match ",isMatch });
     });
   }).catch(e => {});
-
-  // console.log('Inside login api  data  ',user_data.checkPassword);
-  //   user_data.checkPassword(req.body.password,(err,isMatch)=>{
-  //     console.log('err   ',err)
-  //     console.log('ismatch    ',isMatch)
-
-  // });
 });
 
 router.route("/").get(function(req, res) {
