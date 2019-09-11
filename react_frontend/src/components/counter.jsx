@@ -10,6 +10,7 @@ class Counter extends Component {
     console.log("event clicked", this.state.count);
     this.setState({ count: this.state.count + 1 });
   };
+  
   renderTags() {
     if (this.props.tags.length === 0) return <p>There are no tags!</p>;
     return (
